@@ -1,0 +1,27 @@
+.login{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:url("../../assets/img/main-bg.jpg");
+    background-size:cover;
+    .logo{
+        img{
+            height:276px;
+        }
+    }
+    .example-form > * {
+        width: 100%;
+
+        
+      }
+
+      .form-section{
+        display: flex;
+        justify-content: space-between;
+        padding:24px 0;
+    }
+    
+}

@@ -1,0 +1,43 @@
+<div class="clinic-report">
+  <div class="filters">
+    <div class="clinics">
+      <label for="">Unidade</label>
+      <p-autoComplete [dropdown]="true" [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+    </div>
+    <div class="initial-date">
+      <label for="">Período Inicial</label>
+      <p-calendar [(ngModel)]="initial" showTime="true" hourFormat="24"></p-calendar>
+    </div>
+    <div class="initial-date">
+      <label for="">Período Final</label>
+      <p-calendar [(ngModel)]="final" showTime="true" hourFormat="24"></p-calendar>
+    </div>
+    <button mat-raised-button color="primary" (click)="showTable = true">Buscar</button>
+  </div>
+  <div class="content">
+    <table mat-table [dataSource]="dataSource" style="width:100%" class="mat-elevation-z8" *ngIf="showTable == true">
+      <ng-container matColumnDef="clinic">
+        <th mat-header-cell *matHeaderCellDef> Unidade</th>
+        <td mat-cell *matCellDef="let element"> {{element.clinic}} </td>
+      </ng-container>
+      <ng-container matColumnDef="qtd">
+        <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+        <td mat-cell *matCellDef="let element"> {{element.qtd}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Data/Hora </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hours">
+        <th mat-header-cell *matHeaderCellDef> Horas </th>
+        <td mat-cell *matCellDef="let element"> {{element.hours}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

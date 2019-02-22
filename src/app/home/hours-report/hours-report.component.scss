@@ -1,0 +1,17 @@
+.clinic-report{
+    padding:40px;
+    .filters{
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        label{
+            font-weight:bold;
+            font-size:14px;
+            color:#025A7F;
+            margin-right:10px;
+        }
+
+        padding-bottom:80px;
+    }
+}
