@@ -12,7 +12,13 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AutoCompleteModule} from 'primeng/autocomplete'; 
 import {CalendarModule} from 'primeng/calendar';
+import {TableModule} from 'primeng/table';
 import { HoursReportComponent } from './home/hours-report/hours-report.component';
+import { AuthenticationService } from './_services/authentication.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './_helpers/auth.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 
@@ -24,7 +30,7 @@ import { HoursReportComponent } from './home/hours-report/hours-report.component
     MonitoringComponent,
     ClinicReportComponent,
     LoginComponent,
-    HoursReportComponent
+    HoursReportComponent   
   ],
   imports: [
     BrowserModule,
@@ -43,9 +49,15 @@ import { HoursReportComponent } from './home/hours-report/hours-report.component
     MatAutocompleteModule,
     AppRoutingModule,
     AutoCompleteModule,
-    CalendarModule
+    CalendarModule,
+    TableModule,    
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,17 +2,20 @@
   <div class="logo">
     <img src="../../assets/img/logo.png" alt="">
   </div>
-  <form class="example-form">
+  <form class="example-form" [formGroup]="loginForm">
     <mat-form-field>
-      <input matInput placeholder="Usuário">
+      <input matInput placeholder="Login" formControlName="username">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Senha">
+      <input matInput placeholder="Senha" type="password" formControlName="password">
     </mat-form-field>
     <div class="form-section">
-      <mat-checkbox>Lembrar-me</mat-checkbox>
-      <a href="">Esqueci minha senha</a>
-    </div>   
+      <mat-checkbox style="color:#43425D">Lembrar</mat-checkbox>
+      <a href="" style="color:#43425D; font-size:13px;">Esqueci minha senha</a>
+    </div>
   </form>
-  <button mat-raised-button color="primary" routerLink="/home">Login</button>
+  <div class="buttons">
+    <button mat-raised-button color="primary" routerLink="/home">Login</button>
+    <button mat-raised-button  class="white">Cadastro</button>
+  </div>
 </div>

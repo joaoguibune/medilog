@@ -3,15 +3,36 @@
     .filters{
         width:100%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         label{
-            font-weight:bold;
+            font-weight:normal;
             font-size:14px;
-            color:#025A7F;
+            color:#707070;
             margin-right:10px;
         }
-
-        padding-bottom:80px;
+        div{
+            margin-bottom: 20px;
+          
+        }
+        .clinics, .initial-date, .final-date{
+            display: flex;            
+            justify-content: space-between;
+        }
+        
+    }
+    .selected-filters{
+        padding-bottom:22px;
+    }
+    .total{
+        margin-top:24px;
+        width:100%;
+        display: flex;
+        justify-content: flex-end;
+        span{
+            color:#025A7F;
+            font-weight: 600;
+        }
     }
 }

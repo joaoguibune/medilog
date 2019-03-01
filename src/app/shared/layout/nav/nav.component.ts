@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'medlog-nav',
@@ -10,11 +11,38 @@ import { map } from 'rxjs/operators';
 })
 export class NavComponent {
 
+  title:string;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
+   
+    getTitle(state, parent) {
+      var data = [];
+      if(parent && parent.snapshot.data && parent.snapshot.data.title) {
+        data.push(parent.snapshot.data.title);
+      }
+  
+      if(state && parent) {
+        data.push(... this.getTitle(state, state.firstChild(parent)));
+      }
+      return data;
+    }
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  constructor(private breakpointObserver: BreakpointObserver, public router : Router, public route : ActivatedRoute) {
+    {
+      router.events.subscribe(event => {
+        if(event instanceof NavigationEnd) {
+          var title = this.getTitle(router.routerState, router.routerState.root).join('-');
+          this.title = title;
+        }
+      });
+    }
+    
+  }
+
+  
 
 }

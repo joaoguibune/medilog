@@ -21,6 +21,12 @@
         <mat-icon aria-label="Side nav toggle icon">assessment</mat-icon>
         Relatório Horas</a>
     </mat-nav-list>
+    <ul class="submenu">
+      <li><a href="#">Sobre Nós</a></li>
+      <li><a href="#">Política de Privacidade</a></li>
+      <li><a href="#">Nossos Parceiros</a></li>
+      <li><a routerLink="/login">Sair</a></li>
+    </ul>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>
@@ -33,7 +39,7 @@
         >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>MONITORAMENTO</span>
+      <span>{{title | uppercase}}</span>
     </mat-toolbar>
     <ng-content></ng-content>
     <!-- Add Content Here -->
