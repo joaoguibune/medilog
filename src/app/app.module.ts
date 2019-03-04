@@ -18,8 +18,7 @@ import { AuthenticationService } from './_services/authentication.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './_helpers/auth.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
-import { AuthGuard } from './_guards/auth.guard';
-
+import {DropdownModule} from 'primeng/dropdown';
 
 
 @NgModule({
@@ -51,7 +50,9 @@ import { AuthGuard } from './_guards/auth.guard';
     AutoCompleteModule,
     CalendarModule,
     TableModule,    
-    HttpClientModule
+    HttpClientModule,
+    DropdownModule,
+    
   ],
   providers: [
     AuthenticationService,

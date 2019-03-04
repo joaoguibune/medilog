@@ -1,4 +1,4 @@
 export class User {
     
-    token?: string;
+    key?: string;
 }

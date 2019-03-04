@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",    
+    "e2e": "ng e2e",
     "postinstall": "ng build --prod"
   },
   "private": true,
@@ -27,6 +27,7 @@
     "@angular/router": "~7.2.6",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
+    
     "path": "^0.12.7",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.5",

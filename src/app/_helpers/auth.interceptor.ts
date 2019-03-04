@@ -18,10 +18,10 @@ export class AuthInterceptor implements HttpInterceptor {
                 
             }
         });
-        if (currentUser && currentUser.token) {
+        if (currentUser && currentUser.key) {
             request = request.clone({
                 setHeaders: {
-                    Authorization: `token ${currentUser.token}`
+                    Authorization: `token ${currentUser.key}`
                 }
             });
         }

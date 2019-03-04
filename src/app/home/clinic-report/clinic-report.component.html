@@ -1,8 +1,10 @@
 <div class="clinic-report">
   <div class="filters">
-    <div class="clinics">
+    <div class="clinics" *ngIf="healthUnits">
       <label for="">Unidade</label>
-      <p-autoComplete [dropdown]="true" [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+      <!-- <p-autoComplete [dropdown]="true" [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+       -->
+       <p-dropdown [options]="healthUnits.results" [(ngModel)]="selectedUnit" optionLabel="name"></p-dropdown>
     </div>
     <div class="initial-date">
       <label for="">Período Inicial</label>

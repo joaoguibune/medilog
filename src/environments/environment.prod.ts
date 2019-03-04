@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "/v1/"
+  apiUrl: "https://medlog-api.herokuapp.com/v1/"
 };

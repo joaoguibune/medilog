@@ -11,7 +11,7 @@ const routes: Routes = [
  
   {
     path: '',
-    redirectTo:'login',
+    redirectTo:'home',
     pathMatch: 'full'
   },
   {
@@ -20,7 +20,8 @@ const routes: Routes = [
   },  
   {
     path: 'home',
-    component: HomeComponent,    
+    component: HomeComponent,
+    canActivate:[AuthGuard],    
     children: [
       {path: '', redirectTo: 'monitoramento', pathMatch: 'full'},
 		  { path: 'monitoramento', component: MonitoringComponent, data: {title: 'Monitoramento'}},

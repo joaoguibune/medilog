@@ -10,6 +10,10 @@
     .logo{
         img{
             height:276px;
+            @media screen and (max-width:600px) {
+                height:auto;
+                max-width: 100%;
+            }
         }
     }
     .example-form > * {
