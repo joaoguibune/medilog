@@ -1,4 +1,4 @@
-<div class="clinic-report">
+<div class="report">
   <div class="filters">
     <div class="clinics" *ngIf="healthUnits">
       <label for="">Unidade</label>
@@ -18,7 +18,7 @@
   </div>
   <div class="selected-filters" *ngIf="showTable == true">
     <ul>
-      <li><span>Unidade:</span><strong>Todas as Unidades</strong></li>
+      <li><span>Unidade:</span><strong>{{selectedUnit.name}}</strong></li>
       <li><span>Período:</span><strong>{{initial | date:'dd/MM/yyyy hh:mm'}} à {{final | date:'dd/MM/yyyy hh:mm'}}</strong></li>
     </ul>
   </div>

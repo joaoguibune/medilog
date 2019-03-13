@@ -4,6 +4,7 @@ import { startWith, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { IClinicReportModel } from 'src/app/models/clinic-report.model';
 import { HealthUnitService } from 'src/app/_services/health-unit.service';
+import { IHealthUnit } from 'src/app/_models/health-unit.model';
 
 const ELEMENT_DATA: IClinicReportModel[] = [
   

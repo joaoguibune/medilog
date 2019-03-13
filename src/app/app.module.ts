@@ -19,7 +19,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './_helpers/auth.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import {DropdownModule} from 'primeng/dropdown';
-
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import {DropdownModule} from 'primeng/dropdown';
     TableModule,    
     HttpClientModule,
     DropdownModule,
-    
+    LeafletModule.forRoot(),
+    LeafletMarkerClusterModule
+ 
   ],
   providers: [
     AuthenticationService,

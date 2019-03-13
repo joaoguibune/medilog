@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { AuthenticationService } from 'src/app/_services/authentication.service';
 
 @Component({
   selector: 'medlog-nav',
@@ -31,7 +32,7 @@ export class NavComponent {
     }
 
 
-  constructor(private breakpointObserver: BreakpointObserver, public router : Router, public route : ActivatedRoute) {
+  constructor(private breakpointObserver: BreakpointObserver, public router : Router, public route : ActivatedRoute, public _auth : AuthenticationService) {
     {
       router.events.subscribe(event => {
         if(event instanceof NavigationEnd) {
@@ -43,6 +44,8 @@ export class NavComponent {
     
   }
 
-  
+  logout(){
+    this._auth.logout();
+  }
 
 }

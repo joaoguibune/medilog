@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
@@ -175,4 +176,17 @@ body .ui-dropdown .ui-dropdown-trigger {
     background-color: #E1E1E1 !important;  
     color: #707070 !important;
     border-color:#F0F1F1 !important;
+}
+.leaflet-popup{
+    bottom: 30px !important;
+}
+.medilog-popup{
+   
+        padding:0;
+        li{
+            font-size: 13px;
+            color:#025A7F;
+            font-family: 'Roboto';
+        }
+    
 }

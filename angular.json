@@ -27,6 +27,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/leaflet/dist/leaflet.css",     
+              "src/assets/markercluster/markercluster.css",             
+              "src/assets/markercluster/markerclusterdefault.css",              
               "src/styles.scss"
              
             ],
